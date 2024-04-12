@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "GrabEm",
+    "slug": "grabem",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.grabem.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./img/tolmetsLogo2.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  }
+}
