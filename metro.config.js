@@ -1,18 +1,23 @@
-const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const { getDefaultConfig } = require('@expo/metro-config');
 
-/**
- * Metro configuration for React Native
- * Includes custom asset extension for handling MP3 files.
- * https://facebook.github.io/metro/docs/configuration
- *
- * @type {import('metro-config').MetroConfig}
- */
 const defaultConfig = getDefaultConfig(__dirname);
+
+// Your custom configuration adjustments
 const customConfig = {
   resolver: {
+    // Keep your custom asset extensions
     assetExts: [...defaultConfig.resolver.assetExts, 'mp3'],
-    sourceExts: [...defaultConfig.resolver.sourceExts, 'png', 'jpg'] // This line is usually not necessary since png and jpg are included by default.
-  }
+  },
 };
 
-module.exports = mergeConfig(defaultConfig, customConfig);
+// Merge the Expo config with your custom config
+const finalConfig = {
+  ...defaultConfig,
+  resolver: {
+    ...defaultConfig.resolver,
+    assetExts: [...defaultConfig.resolver.assetExts, ...customConfig.resolver.assetExts],
+    sourceExts: [...defaultConfig.resolver.sourceExts], // Assuming no changes needed here
+  },
+};
+
+module.exports = finalConfig;
