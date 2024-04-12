@@ -2,7 +2,7 @@ const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 
 /**
  * Metro configuration for React Native
- * Includes custom asset extensions for handling MP3, PNG, and JPG files.
+ * Includes custom asset extension for handling MP3 files.
  * https://facebook.github.io/metro/docs/configuration
  *
  * @type {import('metro-config').MetroConfig}
